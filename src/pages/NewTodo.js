@@ -1,12 +1,26 @@
 import React from "react";
-import { Row, Col } from "antd";
-import { Form, Input, Button, DatePicker } from "antd";
-
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
+import { Row, Col, Form, Input, Button, DatePicker } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
+import { addTodo } from "./../actions/action";
+import toast from "./../helpers/toast";
 
 function NewTodo(props) {
+  const dispatch = useDispatch();
+
+  const onFinish = (values) => {
+    const data = {
+      id: uuidv4(),
+      name: values.name,
+      time: moment(values.time).format("DD/MM/YYYY").toString(),
+      complete: false,
+    };
+    
+    dispatch(addTodo(data));
+    toast.success("Thành công", "Thêm công việc thành công");
+  };
+
   return (
     <>
       <Row>
@@ -47,7 +61,7 @@ function NewTodo(props) {
                 },
               ]}
             >
-              <DatePicker placeholder="Thời gian hết hạn" />
+              <DatePicker placeholder="Thời gian hết hạn" format="DD/MM/YYYY" />
             </Form.Item>
 
             <Form.Item

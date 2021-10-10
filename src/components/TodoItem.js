@@ -7,15 +7,14 @@ import {
   CloseCircleOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
-
-const todo = {
-  id: 1,
-  name: "Học javascript",
-  time: "25-01-2021",
-  complete: true,
-};
+import { useDispatch } from "react-redux";
+import moment from "moment";
+import { updateTodo, deleteTodo } from "./../actions/action";
+import toast from "./../helpers/toast";
 
 function TodoItem(props) {
+  const dispatch = useDispatch();
+  const { todo } = props;
   const [isPopVisible, setIsPopVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -34,11 +33,10 @@ function TodoItem(props) {
 
   const handlePopOk = () => {
     setConfirmLoading(true);
-
-    setTimeout(() => {
-      setConfirmLoading(false);
-      setIsPopVisible(false);
-    }, 1000);
+    dispatch(deleteTodo(todo.id));
+    setConfirmLoading(false);
+    setIsPopVisible(false);
+    toast.success("Thành công", "Xóa công việc thành công");
   };
 
   const handlePopCancel = () => {
@@ -46,7 +44,26 @@ function TodoItem(props) {
   };
 
   const onFinish = (values) => {
-    console.log("Success:", values);
+    const data = {
+      ...todo,
+      name: values.name,
+      time: moment(values.time).format("DD/MM/YYYY").toString(),
+    };
+
+    dispatch(updateTodo(data));
+    setIsModalVisible(false);
+    toast.success("Thành công", "Cập nhập công việc thành công");
+  };
+
+  const onFinishTodo = () => {
+    const data = {
+      ...todo,
+      complete: true,
+    };
+
+    dispatch(updateTodo(data));
+    setIsModalVisible(false);
+    toast.success("Thành công", "Đã hoàn thành công việc");
   };
 
   return (
@@ -74,7 +91,7 @@ function TodoItem(props) {
         </div>
         <div className="item-end">
           {!todo.complete && (
-            <div className="item-icon">
+            <div className="item-icon" onClick={onFinishTodo}>
               <FileDoneOutlined
                 style={{ fontSize: "18px", color: "#2577fd" }}
               />
@@ -83,7 +100,7 @@ function TodoItem(props) {
           <div className="item-icon" onClick={showModal}>
             <EditOutlined style={{ fontSize: "18px", color: "#08c" }} />
           </div>
-          <div className="item-icon" onClick={showPopconfirm}>
+          <div className="item-icon">
             <Popconfirm
               title="Bạn có thật sự muốn xóa ?"
               visible={isPopVisible}
@@ -93,7 +110,10 @@ function TodoItem(props) {
               okText="Có chứ"
               cancelText="Không nha"
             >
-              <DeleteOutlined style={{ fontSize: "18px", color: "#FC100D" }} />
+              <DeleteOutlined
+                style={{ fontSize: "18px", color: "#FC100D" }}
+                onClick={showPopconfirm}
+              />
             </Popconfirm>
           </div>
         </div>
