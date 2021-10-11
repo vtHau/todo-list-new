@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -9,6 +9,11 @@ import { ReactComponent as WorkIcon } from "./../work.svg";
 
 function Timelime(props) {
   const todos = useSelector((state) => state.todoReducer.todos);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Timeline";
+  }, []);
 
   return (
     <div style={{}}>

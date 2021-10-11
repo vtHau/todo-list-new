@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Home(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Trang chủ";
+  }, []);
+
   return (
     <div>
       <h2 className="title-home">Todo App</h2>
