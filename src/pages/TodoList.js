@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "antd";
-import { useDispatch, useSelector } from "react-redux";
-import TodoItem from "./../components/TodoItem";
+import { useSelector } from "react-redux";
+import TodoItem from "../components/TodoItem";
 
-function Todos(props) {
+function TodoList(props) {
   const todos = useSelector((state) => state.todoReducer.todos);
 
   useEffect(() => {
@@ -28,4 +28,4 @@ function Todos(props) {
   );
 }
 
-export default Todos;
+export default TodoList;

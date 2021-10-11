@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Row, Col, Form, Input, Button, DatePicker } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
-import { addTodo } from "./../actions/action";
-import toast from "./../helpers/toast";
+import { addTodo } from "../actions/action";
+import toast from "../helpers/toast";
 
-function NewTodo(props) {
+function TodoForm(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -86,4 +86,4 @@ function NewTodo(props) {
   );
 }
 
-export default NewTodo;
+export default TodoForm;

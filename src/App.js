@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import "./App.css";
 import { Layout, Menu } from "antd";
-import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
