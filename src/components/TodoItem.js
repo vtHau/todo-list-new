@@ -73,11 +73,11 @@ function TodoItem(props) {
           <div className="item-status">
             {todo.complete ? (
               <CheckCircleOutlined
-                style={{ fontSize: "40px", color: "#4BB543" }}
+                style={{ fontSize: "35px", color: "#4BB543" }}
               />
             ) : (
               <CloseCircleOutlined
-                style={{ fontSize: "40px", color: "#FC100D" }}
+                style={{ fontSize: "35px", color: "#FC100D" }}
               />
             )}
           </div>

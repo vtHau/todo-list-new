@@ -11,6 +11,7 @@
 }
 
 .logo {
+  color: #2577fd;
   height: 32px;
   margin: 16px;
   background: rgba(255, 255, 255, 0.3);
@@ -18,6 +19,22 @@
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.success {
+  color: #4bb543 !important;
+}
+
+.title {
+  color: #2577fd;
+  text-transform: uppercase;
+}
+
+.title-home {
+  font-size: 30px;
+  color: #2577fd;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .todo-item {
@@ -37,9 +54,8 @@
 
 .item-status {
   margin: 0 8px;
-  width: 40px;
-  height: 40px;
-  /* background-color: green; */
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 
@@ -76,4 +92,26 @@
 
 .item-icon {
   margin: 0px;
+}
+
+.vertical-timeline::before {
+  background: #ccc !important;
+}
+
+.vertical-timeline-element-content {
+  -webkit-box-shadow: 0 3px 0 #4bb54385 !important;
+  box-shadow: 0 3px 0 #4bb54385 !important;
+}
+
+.vertical-timeline-element-title {
+  color: #2577fd;
+  font-size: 20px !important;
+}
+
+.vertical-timeline-element-subtitle {
+  color: #ccc;
+}
+
+.vertical-timeline-element-desc {
+  color: #ccc;
 }

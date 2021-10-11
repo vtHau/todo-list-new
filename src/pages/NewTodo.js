@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Form, Input, Button, DatePicker } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,11 @@ import toast from "./../helpers/toast";
 function NewTodo(props) {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Thêm công việc";
+  }, []);
+
   const onFinish = (values) => {
     const data = {
       id: uuidv4(),
@@ -16,7 +21,7 @@ function NewTodo(props) {
       time: moment(values.time).format("DD/MM/YYYY").toString(),
       complete: false,
     };
-    
+
     dispatch(addTodo(data));
     toast.success("Thành công", "Thêm công việc thành công");
   };
@@ -24,7 +29,7 @@ function NewTodo(props) {
   return (
     <>
       <Row>
-        <h2>New todo</h2>
+        <h2 className="title">New todo</h2>
       </Row>
       <Row>
         <Col span={12}>

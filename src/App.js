@@ -31,20 +31,25 @@ function App() {
   return (
     <Layout>
       <Sider trigger={null} theme="light" collapsible collapsed={collapsed}>
-        <h2 className="logo"> {collapsed ? "Todo" : "Todo App"}</h2>
+        <Link to="/">
+          <h2 className="logo"> {collapsed ? "Todo" : "Todo App"}</h2>
+        </Link>
         <Menu
           mode="inline"
           defaultSelectedKeys={["/todos"]}
           selectedKeys={[pathname]}
         >
+          <Menu.Item key="/" icon={<UnorderedListOutlined />}>
+            <Link to="/">Trang chủ</Link>
+          </Menu.Item>
           <Menu.Item key="/todos" icon={<UnorderedListOutlined />}>
-            <Link to="/todos">All Todo</Link>
+            <Link to="/todos">Tất cả công việc</Link>
           </Menu.Item>
           <Menu.Item key="/todos/input" icon={<FormOutlined />}>
-            <Link to="/todos/input">New Todo</Link>
+            <Link to="/todos/input">Thêm mới công việc</Link>
           </Menu.Item>
-          <Menu.Item key="/timeline" icon={<FieldTimeOutlined />}>
-            <Link to="/timeline">Timeline</Link>
+          <Menu.Item key="/todos/timeline" icon={<FieldTimeOutlined />}>
+            <Link to="/todos/timeline">Timeline</Link>
           </Menu.Item>
         </Menu>
       </Sider>
@@ -63,7 +68,7 @@ function App() {
           style={{
             margin: "24px 16px",
             padding: 24,
-            minHeight: 280,
+            height: "100vh",
           }}
         >
           <Routes />
