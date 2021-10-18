@@ -29,7 +29,7 @@ function TodoForm(props) {
   return (
     <>
       <Row>
-        <h2 className="title">New todo</h2>
+        <h2 className="title">Thêm công việc</h2>
       </Row>
       <Row>
         <Col span={12}>

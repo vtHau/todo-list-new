@@ -13,7 +13,7 @@ function TodoList(props) {
   return (
     <>
       <Row>
-        <h2 className="title">All todo list</h2>
+        <h2 className="title">Tất cả công việc</h2>
       </Row>
       <Row>
         <Col span={24}>

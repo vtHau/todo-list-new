@@ -9,6 +9,8 @@ import {
   UnorderedListOutlined,
   FormOutlined,
   FieldTimeOutlined,
+  UserOutlined,
+  HomeOutlined,
 } from "@ant-design/icons";
 
 import Routes from "./routes/routes";
@@ -39,7 +41,7 @@ function App() {
           defaultSelectedKeys={["/todos"]}
           selectedKeys={[pathname]}
         >
-          <Menu.Item key="/" icon={<UnorderedListOutlined />}>
+          <Menu.Item key="/" icon={<HomeOutlined />}>
             <Link to="/">Trang chủ</Link>
           </Menu.Item>
           <Menu.Item key="/todos" icon={<UnorderedListOutlined />}>
@@ -50,6 +52,9 @@ function App() {
           </Menu.Item>
           <Menu.Item key="/todos/timeline" icon={<FieldTimeOutlined />}>
             <Link to="/todos/timeline">Timeline</Link>
+          </Menu.Item>
+          <Menu.Item key="/profile" icon={<UserOutlined />}>
+            <Link to="/profile">Sinh viên</Link>
           </Menu.Item>
         </Menu>
       </Sider>
