@@ -8,7 +8,7 @@ function Home(props) {
 
   return (
     <div>
-      <h2 className="title-home">Todo App</h2>
+      <h2 className="title-home">React App</h2>
     </div>
   );
 }
