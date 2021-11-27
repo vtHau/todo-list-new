@@ -8,6 +8,7 @@ export const carts = [
       name: "iPhone 11 I Chính hãng VN/A",
       price: 14500000,
     },
+    quantity: 1,
   },
   {
     product: {
