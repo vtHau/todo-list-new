@@ -33,7 +33,9 @@ function Cart() {
             <div className="cart-total">
               <div className="total-money-wrapper">
                 <h3 className="title-money">Tổng tiền: </h3>
-                <p className="total-money">{formatPrice(totalPrice)}</p>
+                <p className="total-money">
+                  {formatPrice(totalPrice) || formatPrice(0)}
+                </p>
               </div>
             </div>
           </div>
