@@ -32,6 +32,11 @@ function Profile(props) {
               <div className="info_data">
                 <div className="data">
                   <p>Nhóm NoHope</p>
+                  <p>Lê Đức Duy - 4501104038</p>
+                  <p>Nguyễn Tuấn Tiến - 4501104236</p>
+                  <p>Đỗ Gia Phúc Toàn - 4501104245</p>
+                  <p>Hà Anh Trí - 4501104254</p>
+                  <p>Võ Trung Hậu - 4501104077</p>
                 </div>
               </div>
             </div>
