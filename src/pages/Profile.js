@@ -25,8 +25,6 @@ function Profile(props) {
               alt="user"
               width={100}
             />
-            <h4>Võ Trung Hậu</h4>
-            <p>45.01.104.077</p>
           </div>
           <div className="right">
             <div className="info">
