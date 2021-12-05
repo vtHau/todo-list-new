@@ -95,7 +95,10 @@ function App() {
               <Link to="/todos/timeline">Timeline</Link>
             </Menu.Item>
             <Menu.Item key="/profile" icon={<UserOutlined />}>
-              <Link to="/profile">Thông tin nhóm</Link>
+              <Link to="/profile">Thông tin sinh viên</Link>
+            </Menu.Item>
+            <Menu.Item key="/team" icon={<UserOutlined />}>
+              <Link to="/team">Thông tin nhóm</Link>
             </Menu.Item>
           </Menu>
         </Sider>

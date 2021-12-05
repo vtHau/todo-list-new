@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import TodoList from "../pages/TodoList";
 import TodoForm from "../pages/TodoForm";
 import Timelime from "../pages/Timelime";
+import Team from "../pages/Team";
 import Profile from "../pages/Profile";
 import Product from "../pages/Product";
 import Cart from "../pages/Cart";
@@ -18,6 +19,7 @@ function Routes(props) {
       <Route exact path="/todos/input" component={TodoForm} />
       <Route exact path="/todos/timeline" component={Timelime} />
       <Route exact path="/profile" component={Profile} />
+      <Route exact path="/team" component={Team} />
     </Switch>
   );
 }
